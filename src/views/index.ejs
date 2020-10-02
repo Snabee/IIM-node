@@ -1,0 +1,21 @@
+<% layout('layout/app') %>
+
+<h1>Post</h1>
+<div class="container">
+    <% posts.forEach(function (post) { %>
+        <a href="/post/<%= post.id %>">
+            <div class="card">
+                <img src="<%= post.image %>" alt=""/>
+                <div class="card-details">
+                    <h2><%= post.title %></h2>
+                    <p class="text-secondary">
+                        <%= post.description %>
+                    </p>
+                    <small>
+                        Crée le <%= new Intl.DateTimeFormat('en-GB').format(post.createdAt) %>
+                    </small>
+                </div>
+            </div>
+        </a>
+    <% }) %>
+</div>

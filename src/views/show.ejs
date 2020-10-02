@@ -1,0 +1,20 @@
+<% layout('layout/app') %>
+
+<h1><%= post.title %></h1>
+<div class="container">
+    <div class="post">
+        <img src="<%= post.image %>" alt="">
+        <p class="text-secondary">
+            <i>
+                <%= post.description %>
+            </i>
+        </p>
+        <div class="content">
+            <p>
+                <%= post.body %>
+            </p>
+            <a class="btn btn-primary" href="/blog/edit/<%= post.id %>">Editer</a>
+            <a class="btn btn-danger" href="/blog/delete/<%= post.id %>">Supprimer</a>
+        </div>
+    </div>
+</div>
